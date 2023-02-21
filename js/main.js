@@ -1,3 +1,6 @@
+"use strict";
+
+
 const pricePerKm = 0.25;
 const underAgeDiscount = 20;
 const overAgeDiscount = 40;
@@ -13,14 +16,14 @@ do {
 
 do {
     userAge = prompt('enter your age', '');
-}while(isNaN(userAge) || +userAge > 130); // si presume nessuno viva dopo i 130 anni
+}while(isNaN(userAge) || userAge > 130); // si presume nessuno viva dopo i 130 anni
 
 
 price = pricePerKm * +kmToGO;
 
-if(+userAge < 18){
+if(userAge < 18){
     price = price * ((100 - underAgeDiscount)/100);
-}else if(+userAge > 65){
+}else if(userAge > 65){
     price = (price * (100 - overAgeDiscount) / 100);
 }
 
